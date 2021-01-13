@@ -8,21 +8,23 @@ namespace DotnetIteration
 
     public static class Iteration
     {
+        private static int value;
+
         /*
-           Welcome to Interation
+Welcome to Interation
 
-           In each method below you will see instructions that detail the requirements
-           the method must implement to make the test pass.
+In each method below you will see instructions that detail the requirements
+the method must implement to make the test pass.
 
-           To start on a method comment out, or remove, the line
-           `throw new System.NotImplementedException();`
+To start on a method comment out, or remove, the line
+`throw new System.NotImplementedException();`
 
-           As you write and save your code, you can look in your terminal where you
-           ran `dotnet watch test` to see if your code is working. The tests
-           continuously check your work each time you save. If a test is failing
-           you have not yet completed that method. Once you finish a method and have
-           it correct, the test will tell you how the next method is working.
-        */
+As you write and save your code, you can look in your terminal where you
+ran `dotnet watch test` to see if your code is working. The tests
+continuously check your work each time you save. If a test is failing
+you have not yet completed that method. Once you finish a method and have
+it correct, the test will tell you how the next method is working.
+*/
 
 
         //  
@@ -32,7 +34,9 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            throw new System.NotImplementedException();
+            var UpperCaseWords = words.Select(word => words.ToUpper());
+            return UpperCaseWords;
+
         }
 
 
@@ -43,7 +47,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+
+            var numberDouble = numbers.Select(number => value * 2);
+            return numberDouble;
         }
 
 
@@ -116,7 +122,7 @@ namespace DotnetIteration
         // 
         public static string FindTheNeedle(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+            var FindTheNeedle = se
         }
 
 
@@ -138,7 +144,7 @@ namespace DotnetIteration
         // 
         public static bool SomeoneToLove(List<string> words)
         {
-            throw new System.NotImplementedException();
+            ;
         }
     }
 }
