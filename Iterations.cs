@@ -34,9 +34,8 @@ it correct, the test will tell you how the next method is working.
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            var UpperCaseWords = words.Select(word => words.ToUpper());
-            return UpperCaseWords;
-
+            var upperCaseWords = words.Select(word => word.ToUpper());
+            return upperCaseWords;
         }
 
 
@@ -47,8 +46,7 @@ it correct, the test will tell you how the next method is working.
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-
-            var numberDouble = numbers.Select(number => value * 2);
+            var numberDouble = numbers.Select(number => number * 2);
             return numberDouble;
         }
 
@@ -122,7 +120,8 @@ it correct, the test will tell you how the next method is working.
         // 
         public static string FindTheNeedle(List<string> sentences)
         {
-            var FindTheNeedle = se
+            throw new System.NotImplementedException();
+            // var FindTheNeedle = se
         }
 
 
@@ -144,7 +143,7 @@ it correct, the test will tell you how the next method is working.
         // 
         public static bool SomeoneToLove(List<string> words)
         {
-            ;
+            throw new System.NotImplementedException();
         }
     }
 }
