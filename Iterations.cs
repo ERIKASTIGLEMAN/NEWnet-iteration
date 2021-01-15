@@ -9,6 +9,7 @@ namespace DotnetIteration
     public static class Iteration
     {
         private static int value;
+        private static object index;
 
         /*
 Welcome to Interation
@@ -59,17 +60,22 @@ it correct, the test will tell you how the next method is working.
         // 
         public static IEnumerable<string> StringyIndexes(List<string> words)
         {
-            throw new System.NotImplementedException();
+            var newWords = words.Select((word, index) => $"{word} is at index {index}");
+            return newWords;
+
+
         }
 
 
         // 
         // 4) Complete the method OnlyTheEvenSurvive that accepts a list of
         //    numbers and returns only the elements that are even.
-        // 
+
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            // need to use where statement to pull out even number from list
+            var onlyEvenNumbers = numbers.Where(number => number % 2 == 0);
+            return onlyEvenNumbers;
         }
 
 
@@ -80,7 +86,8 @@ it correct, the test will tell you how the next method is working.
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var onlyEvenNumbers = numbers.Where((number, index) => index % 2 == 0);
+            return onlyEvenNumbers;
         }
 
 
@@ -99,17 +106,19 @@ it correct, the test will tell you how the next method is working.
         // 
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> movies, int yearToMatch)
         {
-            throw new System.NotImplementedException();
+            var BestMoviesOfTheYear = movies.Where(movie => movie.Score > 90 && movie.Year == yearToMatch);
+            var nameBestMovieOfTheYear = BestMoviesOfTheYear.Select(movies => movies.Name);
+            return nameBestMovieOfTheYear;
         }
-
-
+        // 
         // 
         // 7) Complete the method EveryoneIsOdd that accepts a list of
         //    numbers and returns true if every element of the list is odd.
         // 
         public static bool EveryoneIsOdd(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var EveryoneIsOdd = numbers.All(number => number % 2 != 0);
+            return EveryoneIsOdd;
         }
 
 
@@ -120,8 +129,12 @@ it correct, the test will tell you how the next method is working.
         // 
         public static string FindTheNeedle(List<string> sentences)
         {
-            throw new System.NotImplementedException();
-            // var FindTheNeedle = se
+            //    given a list of sentences. go through each sentence 
+            var FindTheNeedle = sentences.First(sentence => sentence.Contains("needle"));
+            // does the string CONTAIN the word Needle
+            // var containsNeedle = sentences.Contains('needle');
+            // return string with word NEEDLE
+            return FindTheNeedle;
         }
 
 
@@ -132,7 +145,12 @@ it correct, the test will tell you how the next method is working.
         // 
         public static int FindTheNeedleIndex(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+            // Given a list, find the word Needle
+            var findTheNeedleIndex = sentences.FindIndex(sentence => sentence.Contains("needle"));
+            //  Find the index containing Needle
+
+            //  Return the index containing Needle
+            return findTheNeedleIndex;
         }
 
 
@@ -143,7 +161,11 @@ it correct, the test will tell you how the next method is working.
         // 
         public static bool SomeoneToLove(List<string> words)
         {
-            throw new System.NotImplementedException();
+            // Given a LIST of Strings count number of characters
+            var SomeoneToLove = words.Any(word => word.Length == 4);
+            // If string equals 4 characters return true
+            return SomeoneToLove;
+
         }
     }
 }
